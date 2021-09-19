@@ -1,0 +1,35 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/master
+          jwk-set-uri: http://localhost:8080/auth/realms/master/protocol/openid-connect/certs
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:29092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      
+    producer:
+      bootstrap-servers: localhost:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+  data:
+     mongodb:
+       authentication-database: admin
+       database: mercator-app-dev
+       host: 192.168.56.1
+       password: Softhausit!2019!
+       port: 27017
+       repositories.enabled: true
+       username: root
+
+logstash.host: 192.168.56.1
+logstash.port: 5000
+logging.level.org.springframework: ERROR
+logging.level.com: DEBUG
+elasticsearch.url: http://192.168.56.1:9200/_bulk    
