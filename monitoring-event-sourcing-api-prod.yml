@@ -1,0 +1,34 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: kafka:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      
+    producer:
+      bootstrap-servers: kafka:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      
+  data:
+     mongodb:
+       authentication-database: admin
+       database: mercator-app-dev
+       host: mongo
+       password: Softhausit!2019!
+       port: 27017
+       repositories.enabled: true
+       username: root
+       
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://services-registry:8090/eureka
+      
+logstash.host: logstash
+logstash.port: 5000
+logging.level.org.springframework: ERROR
+logging.level.com: DEBUG
+elasticsearch.url: http://192.168.56.1:9200/_bulk
