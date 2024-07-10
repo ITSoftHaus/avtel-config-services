@@ -22,7 +22,7 @@ spring:
   kafka:
     consumer:
       bootstrap-servers: 10.50.53.27:29092
-      group-id: group_id
+      group-id: searchtec-serco-api
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -35,7 +35,7 @@ spring:
   data:
      mongodb:
        authentication-database: admin
-       database: serco-app-dev
+       database: serco-veiculos-dev
        host: 10.50.53.27
        password: Softhausit!2019!
        port: 27017
@@ -54,7 +54,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.5:8090/eureka
+      defaultZone: http://localhost:8090/eureka
       
 logstash.host: 10.50.53.27
 logstash.port: 5000

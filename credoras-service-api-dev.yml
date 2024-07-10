@@ -35,7 +35,7 @@ spring:
   data:
      mongodb:
        authentication-database: admin
-       database: serco-app-dev
+       database: serco-credoras-dev
        host: 10.50.53.27
        password: Softhausit!2019!
        port: 27017

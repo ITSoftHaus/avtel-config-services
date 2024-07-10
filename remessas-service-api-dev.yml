@@ -13,4 +13,4 @@ eureka:
 #logstash.port: 5000
 logging.level.org.springframework: ERROR
 logging.level.com: DEBUG
-#elasticsearch.url: http://localhost:9200/_bulk    
+#elasticsearch.url: http://localhost:9200/_bulk  
