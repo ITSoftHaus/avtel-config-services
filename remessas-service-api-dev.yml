@@ -1,63 +1,16 @@
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/auth/realms/master
-          jwk-set-uri: http://localhost:8080/auth/realms/master/protocol/openid-connect/certs
-      client: 
-        registration:
-          keycloak:
-            provider: keycloak
-            client-name: veiculos-service
-            client-id: veiculos-service
-            client-secret: 53d7cd0a-db89-4e36-92b7-48681dbb2ce3
-            client-authentication-method: basic
-            authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"        
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:8080/auth/realms/master            
-            user-name-attribute: preferred_username
-  kafka:
-    consumer:
-      bootstrap-servers: localhost:29092
-      group-id: group_id
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      
-    producer:
-      bootstrap-servers: localhost:29092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
   data:
      mongodb:
-       authentication-database: admin
-       database: serco-app-dev
-       host: localhost
-       password: Softhausit!2019!
-       port: 27017
-       repositories.enabled: true
-       username: root
-     elasticsearch:
-      client:
-        reactive:
-          endpoints: 'localhost:9200'
-          username: 'elastic'
-          password: 'changeme'
-      cluster-name: 'searchtec-serco-cluster'
-      cluster-nodes: 'localhost:9200'
-      repositories.enabled: true
+       database: zenite-cluster
+       host: mongodb+srv://zenite-admin-app:LDP3yITXKR7RR21b@zenite-cluster.swe3yyp.mongodb.net/?retryWrites=true&w=majority&appName=zenite-cluster       
              
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8090/eureka
+      defaultZone: https://zenite-discovery-server.azurewebsites.net/eureka
       
-logstash.host: localhost
-logstash.port: 5000
+#logstash.host: localhost
+#logstash.port: 5000
 logging.level.org.springframework: ERROR
 logging.level.com: DEBUG
-elasticsearch.url: http://localhost:9200/_bulk    
+#elasticsearch.url: http://localhost:9200/_bulk    

@@ -1,4 +1,12 @@
 spring:
+  datasource:
+    url: jdbc:postgresql://zenite-registro-contratos.postgres.database.azure.com:5432/zenitedev
+    username: appdbadmin
+    password: Softhausit@2024
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   security:
     oauth2:
       resourceserver:
