@@ -2,7 +2,7 @@ spring:
   data:
      mongodb:
        database: zenite-cluster
-       uri: mongodb+srv://zenite-admin-app:LDP3yITXKR7RR21b@zenite-cluster.swe3yyp.mongodb.net/?ssl=false&sslInvalidHostNameAllowed=trueQuestion&retryWrites=true&w=majority&appName=zenite-cluster       
+       uri: mongodb+srv://zenite-admin-app:LDP3yITXKR7RR21b@zenite-cluster.swe3yyp.mongodb.net/?ssl=false&sslInvalidHostNameAllowed=true&retryWrites=true&w=majority&appName=zenite-cluster       
              
 eureka:
   client:
