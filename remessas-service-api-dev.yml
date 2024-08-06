@@ -1,13 +1,13 @@
 spring:
   data:
      mongodb:
-       database: zenite-cluster
-       uri: mongodb+srv://zenite-admin-app:LDP3yITXKR7RR21b@zenite-cluster.swe3yyp.mongodb.net/?ssl=false&sslInvalidHostNameAllowed=true&retryWrites=true&w=majority&appName=zenite-cluster       
+       database: zenite-remessas
+       uri: mongodb://zenite-admin:ZeniteMongoSofthausIT2024@localhost:27017/
              
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://zenite-discovery-server.azurewebsites.net/eureka
+      defaultZone: http://localhost:8090/eureka
       
 #logstash.host: localhost
 #logstash.port: 5000
