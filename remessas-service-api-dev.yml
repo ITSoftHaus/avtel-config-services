@@ -2,12 +2,23 @@ spring:
   data:
      mongodb:
        database: zenite-remessas
-       uri: mongodb://zenite-admin:ZeniteMongoSofthausIT2024@localhost:27017/
-             
+       uri: mongodb://zenite-admin:ZeniteMongoSofthausIT2024@localhost:27017/	                
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8090/eureka
+      defaultZone: http://localhost:8090/eureka	  
+kafka:
+  consumer:
+    bootstrap-servers: localhost:9092
+    group-id: softhausit-zenite-api
+    auto-offset-reset: earliest
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    
+  producer:
+    bootstrap-servers: localhost:29092
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
       
 #logstash.host: localhost
 #logstash.port: 5000
