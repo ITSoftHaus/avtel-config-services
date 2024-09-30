@@ -2,26 +2,22 @@ spring:
   data:
      mongodb:
        database: zenite-remessas
-       uri: mongodb://zenite-admin:ZeniteMongoSofthausIT2024@localhost:27017/	                
+       uri: mongodb://zenite-admin:ZeniteMongoSofthausIT2024@localhost:27017/
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: softhausit-zenite-api
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        
+    producer:
+      bootstrap-servers: localhost:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer       
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8090/eureka	  
-kafka:
-  consumer:
-    bootstrap-servers: localhost:9092
-    group-id: softhausit-zenite-api
-    auto-offset-reset: earliest
-    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    
-  producer:
-    bootstrap-servers: localhost:9092
-    key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      defaultZone: http://localhost:8090/eureka
       
-#logstash.host: localhost
-#logstash.port: 5000
-logging.level.org.springframework: ERROR
-logging.level.com: DEBUG
-#elasticsearch.url: http://localhost:9200/_bulk 
+elasticsearch.url: http://localhost:9200/_bulk 
